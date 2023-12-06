@@ -1,54 +1,44 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end;
     height: 100vh;
-    background: linear-gradient(to bottom right, #9d50bb, #6e48aa);
-  }
-  
-  #board {
+    background: linear-gradient(to bottom right, #ccc, #666);
+}
+
+.container {
+    text-align: center;
+}
+
+.game {
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    gap: 5px;
-    max-width: 300px;
-    margin: 20px auto;
-  }
-  
-  .cell {
-    width: 100%;
+    grid-gap: 5px;
+}
+
+.cell {
+    width: 100px;
     height: 100px;
+    background-color: #fff;
+    border: 2px solid #000;
+    font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    font-weight: bold;
     cursor: pointer;
-    background-color: #ffffff;
-    border: 2px solid #6e48aa;
-  }
-  
-  .message {
+}
+
+.message {
     margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    color: #ffffff;
-  }
-  
-  .restart-button {
-    margin-top: 10px;
-    padding: 10px 20px;
+}
+
+button {
+    padding: 10px;
     font-size: 16px;
-    cursor: pointer;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    color: #6e48aa;
-  }
-  
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ddd;
+}
