@@ -37,8 +37,13 @@ button {
     padding: 10px;
     font-size: 16px;
     margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background: linear-gradient(to right, #000, #444);
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #ddd;
+    background: linear-gradient(to right, #222, #666);
 }

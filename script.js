@@ -8,11 +8,14 @@ function startGame() {
     currentPlayer = 'X';
     updateMessage('Game started. ' + currentPlayer + "'s turn.");
     updateGameBoard();
+    document.getElementById('startMessage').style.display = 'none';
+    document.querySelector('button').style.display = 'none';
 }
 
 function restartGame() {
     startGame();
     updateMessage('Game restarted. ' + currentPlayer + "'s turn.");
+    document.querySelector('button').style.display = 'none';
 }
 
 function handleClick(index) {
@@ -21,12 +24,14 @@ function handleClick(index) {
         if (checkWin()) {
             updateMessage(currentPlayer + ' wins!');
             gameActive = false;
+            document.querySelector('button').style.display = 'block';
         } else if (checkDraw()) {
             updateMessage('It\'s a draw!');
             gameActive = false;
+            document.querySelector('button').style.display = 'block';
         } else {
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            updateMessage(currentPlayer + "'s turn.");
+            updateMessage(currentPlayer === 'X' ? "Player 1's turn." : "Player 2's turn.");
         }
         updateGameBoard();
     }
@@ -39,7 +44,6 @@ function updateGameBoard() {
 }
 
 function updateMessage(message) {
-    document.getElementById('startMessage').style.display = 'none';
     document.getElementById('resultMessage').innerText = message;
     document.getElementById('turnMessage').innerText = gameActive ? 'Current turn: ' + currentPlayer : '';
 }
